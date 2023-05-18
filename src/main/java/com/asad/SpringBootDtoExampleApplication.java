@@ -4,13 +4,21 @@ import com.asad.model.Location;
 import com.asad.model.User;
 import com.asad.repository.LocationRepository;
 import com.asad.repository.UserRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringBootDtoExampleApplication implements CommandLineRunner {
+
+//	2nd Step
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDtoExampleApplication.class, args);
